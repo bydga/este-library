@@ -75,11 +75,7 @@ este.react.syntaxSugarize = (proto) ->
   @private
 ###
 este.react.improve = (factory) ->
-  ###*
-    @param {*=} arg1
-    @param {*=} arg2
-  ###
-  (arg1, arg2) ->
+  (`/** @type {function(*=, *=): React.ReactComponent} */`) (arg1, arg2) ->
     if !arguments.length
       return factory.call @
 
