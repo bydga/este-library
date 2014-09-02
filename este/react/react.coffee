@@ -40,7 +40,9 @@ este.react.render = (component, container, callback = ->) ->
  @template S
 ###
 este.react.renderToString = (component, callback) ->
- React.renderComponentToString component, callback
+ str = React.renderComponentToString component
+ callback str
+ return
 
 ###*
   Remove a mounted React component from the DOM and clean up its event handlers
