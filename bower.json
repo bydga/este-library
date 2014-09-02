@@ -5,7 +5,6 @@
     "closure-compiler": "http://dl.google.com/closure-compiler/compiler-latest.zip",
     "closure-library": "git+https://github.com/google/closure-library/",
     "pointerevents-polyfill": "~0.1.1",
-    "react": "~0.8.0",
     "stylus-nib": "git://github.com/visionmedia/nib.git"
   }
 }
