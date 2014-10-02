@@ -8,7 +8,6 @@ goog.provide 'este.react.render'
 goog.provide 'este.react.unmount'
 
 goog.require 'este.array'
-goog.require 'este.thirdParty.react'
 goog.require 'goog.asserts'
 goog.require 'goog.object'
 
