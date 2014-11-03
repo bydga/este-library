@@ -19,7 +19,8 @@ goog.require 'goog.object'
 ###
 este.react.create = (proto) ->
   este.react.syntaxSugarize proto
-  factory = React.createClass (`/** @lends {React.ReactComponent.prototype} */`) proto
+  reactClass = React.createClass (`/** @lends {React.ReactComponent.prototype} */`) proto
+  factory = React.createFactory reactClass
   este.react.improve factory
 
 ###*
@@ -30,7 +31,7 @@ este.react.create = (proto) ->
   @return {React.ReactComponent} Component instance rendered in container.
 ###
 este.react.render = (component, container, callback = ->) ->
-  React.renderComponent component, container, callback
+  React.render component, container, callback
 
 ###*
  Render React component to string.
@@ -39,7 +40,7 @@ este.react.render = (component, container, callback = ->) ->
  @template S
 ###
 este.react.renderToString = (component, callback) ->
- str = React.renderComponentToString component
+ str = React.renderToString component
  callback str
  return
 

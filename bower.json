@@ -1,8 +1,8 @@
 {
   "name": "este-library",
-  "version": "5.2.46",
+  "version": "5.2.47",
   "dependencies": {
-    "closure-compiler": "http://dl.google.com/closure-compiler/compiler-latest.zip",
+    "closure-compiler": "git+https://github.com/vlkous/closure-compiler.git",
     "closure-library": "git+https://github.com/google/closure-library/",
     "pointerevents-polyfill": "~0.1.1",
     "stylus-nib": "git://github.com/visionmedia/nib.git"
