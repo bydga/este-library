@@ -19,9 +19,8 @@ goog.require 'goog.object'
 ###
 este.react.create = (proto) ->
   este.react.syntaxSugarize proto
-  reactClass = React.createClass (`/** @lends {React.ReactComponent.prototype} */`) proto
-  factory = React.createFactory reactClass
-  este.react.improve factory
+  factory = React.createClass (`/** @lends {React.ReactComponent.prototype} */`) proto
+  este.react.improve React.createFactory factory
 
 ###*
   Render React component.
@@ -59,9 +58,10 @@ este.react.unmount = (container) ->
   @private
 ###
 este.react.syntaxSugarize = (proto) ->
-  for tag, factory of React.DOM
-    continue if !goog.isFunction factory
+  goog.object.forEach React.DOM, (factory, tag) ->
+    return unless goog.isFunction factory
     proto[tag] = este.react.improve factory
+  , @
   return
 
 ###*
@@ -80,10 +80,12 @@ este.react.improve = (factory) ->
   (`/** @type {function(*=, *=): React.ReactComponent} */`) (arg1, arg2) ->
     if !arguments.length
       return factory.call @
-
     props = arg1
     children = arg2
-    if props?.constructor != Object
+
+    if goog.isDefAndNotNull(props) and
+    (props.constructor isnt Object or
+    React.isValidElement goog.asserts.assertObject props)
       props = null
       children = arg1
 
@@ -92,4 +94,4 @@ este.react.improve = (factory) ->
       children = goog.array.flatten children
       este.array.removeUndefined children
 
-    factory.apply @, [props].concat children ? []
+    factory.apply @, goog.array.concat props, children
