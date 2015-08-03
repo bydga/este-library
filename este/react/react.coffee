@@ -61,7 +61,6 @@ este.react.syntaxSugarize = (proto) ->
   goog.object.forEach React.DOM, (factory, tag) ->
     return unless goog.isFunction factory
     proto[tag] = este.react.improve factory
-  , @
   return
 
 ###*
