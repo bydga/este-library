@@ -151,7 +151,7 @@ este.dom.getDomPathIndexes = (element) ->
 ###*
   @param {Array.<number>} path
   @param {Document=} doc
-  @return {Element}
+  @return {Node}
 ###
 este.dom.getElementByDomPathIndex = (path, doc = document) ->
   element = doc.documentElement
