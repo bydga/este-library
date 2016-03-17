@@ -9,7 +9,7 @@ goog.require 'goog.array'
 
 ###*
   Removes all values that satisfies the given condition.
-  @param {goog.array.ArrayLike} arr
+  @param {IArrayLike} arr
   @param {Function} f The function to call for every element. This function
   takes 3 arguments (the element, the index and the array) and should
   return a boolean.
@@ -27,7 +27,7 @@ este.array.removeAllIf = (arr, f, obj) ->
 
 ###*
   Removes undefined values from array.
-  @param {goog.array.ArrayLike} arr
+  @param {IArrayLike} arr
 ###
 este.array.removeUndefined = (arr) ->
   este.array.removeAllIf arr, (item) -> item == undefined
