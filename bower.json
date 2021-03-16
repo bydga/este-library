@@ -3,7 +3,7 @@
   "version": "5.2.47",
   "dependencies": {
     "closure-compiler": "git+https://github.com/vlkous/closure-compiler.git",
-    "closure-library": "git+https://github.com/google/closure-library.git#v20170409",
+    "closure-library": "git+https://github.com/cardek/closure-library.git#v20170409-sbks",
     "pointerevents-polyfill": "~0.1.1",
     "stylus-nib": "git://github.com/visionmedia/nib.git"
   }
