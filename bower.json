@@ -5,6 +5,6 @@
     "closure-compiler": "git+https://github.com/vlkous/closure-compiler.git",
     "closure-library": "git+https://github.com/cardek/closure-library.git#v20170409-sbks",
     "pointerevents-polyfill": "~0.1.1",
-    "stylus-nib": "git://github.com/visionmedia/nib.git"
+    "stylus-nib": "git+https://github.com/visionmedia/nib.git"
   }
 }
